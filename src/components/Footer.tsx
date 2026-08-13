@@ -13,6 +13,7 @@ const footerLinks = {
   ],
   Company: [
     { label: "About Us", path: "/about" },
+    { label: "Careers & Internships", path: "/careers" },
     { label: "Portfolio", path: "/portfolio" },
     { label: "Case Studies", path: "/case-studies" },
     { label: "Blog", path: "/blog" },
