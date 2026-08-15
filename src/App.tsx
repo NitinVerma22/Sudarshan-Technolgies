@@ -12,7 +12,6 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ChatWidget from "./components/ChatWidget";
 import ScrollProgress from "./components/ScrollProgress";
-import CustomCursor from "./components/CustomCursor";
 
 // Lazy loading all pages
 const Index = lazy(() => import("./pages/Index"));
@@ -45,7 +44,6 @@ const AnimatedRoutes = () => {
   return (
     <div className="min-h-screen flex flex-col relative">
       {/* Premium UI Elements */}
-      <CustomCursor />
       <ScrollProgress />
       
       {/* Persistent Layout Elements */}
