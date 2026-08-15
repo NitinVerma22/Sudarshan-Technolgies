@@ -8,7 +8,10 @@ import {
   PenTool, 
   Cpu, 
   TrendingUp, 
-  Briefcase 
+  Briefcase,
+  Video,
+  Share2,
+  Lightbulb
 } from "lucide-react";
 
 export interface InternshipRole {
@@ -23,6 +26,8 @@ export interface InternshipRole {
   stipend: string;
   openings: number;
   featured?: boolean;
+  status: "Open" | "Closed";
+  goodFor?: string;
   description: string;
   responsibilities: string[];
   skills: string[];
@@ -30,6 +35,79 @@ export interface InternshipRole {
 }
 
 export const internshipRoles: InternshipRole[] = [
+  {
+    id: "app-testing-qa-intern",
+    title: "App Testing & QA Intern",
+    category: "QA & AI",
+    icon: CheckSquare,
+    department: "Quality Engineering",
+    location: "Lucknow (Hybrid)",
+    duration: "3 Months",
+    type: "Full-Time Internship",
+    stipend: "Performance Stipend + Certificate",
+    openings: 5,
+    featured: true,
+    status: "Open",
+    goodFor: "BCA, MCA, B.Tech, IT/CS students (No prior experience required)",
+    description: "Best option for students to get hands-on experience! Test SikkaPlay app & games, identify bugs, test wallet/withdrawal flows, and suggest improvements.",
+    responsibilities: [
+      "Test SikkaPlay app and games for bugs, errors, and performance glitches",
+      "Thoroughly test login, gameplay, rewards, wallet balance, and withdrawal flows",
+      "Record bugs with clear screenshots and screen recording videos",
+      "Suggest UI/UX and game experience improvements",
+      "Retest bugs after developer fixes to ensure complete resolution"
+    ],
+    skills: ["Android / Mobile Knowledge", "Bug Observation", "Google Sheets / Excel", "Quality Testing"],
+    perks: ["Certificate of Completion", "Mentorship by Senior QA Lead", "PPO Opportunity", "Live App Testing"]
+  },
+  {
+    id: "ai-content-reels-intern",
+    title: "AI Content & Reels Intern",
+    category: "Design & Content",
+    icon: Video,
+    department: "Media & AI Creative",
+    location: "Remote / Hybrid",
+    duration: "3 Months",
+    type: "Full-Time Internship",
+    stipend: "Performance Stipend + Bonuses",
+    openings: 4,
+    featured: true,
+    status: "Open",
+    goodFor: "Anyone interested in content creation & AI, even beginners",
+    description: "Create engaging Instagram Reels and YouTube Shorts for SikkaPlay promotions using cutting-edge AI video tools, CapCut, and Canva.",
+    responsibilities: [
+      "Create viral Instagram Reels and YouTube Shorts for SikkaPlay promotional campaigns",
+      "Leverage AI video-generation tools to produce high-performing videos fast",
+      "Edit videos, write engaging captions, and design eye-catching thumbnails",
+      "Experiment with creative video concepts, trends, and audio hooks"
+    ],
+    skills: ["CapCut / Canva", "AI Video Tools", "Reels & Shorts Editing", "Creative Storytelling"],
+    perks: ["Hands-on AI Video Experience", "Published Content", "Flexible Hours", "Performance Bonus"]
+  },
+  {
+    id: "social-media-marketing-intern",
+    title: "Social Media & Digital Marketing Intern",
+    category: "Design & Content",
+    icon: Share2,
+    department: "Growth Marketing",
+    location: "Remote / Hybrid",
+    duration: "3 Months",
+    type: "Full-Time Internship",
+    stipend: "Performance Stipend + Incentives",
+    openings: 4,
+    featured: true,
+    status: "Open",
+    goodFor: "Beginners & Marketing enthusiasts (No prior experience required)",
+    description: "Manage Instagram & YouTube channels, upload Shorts/Reels, connect with relevant influencers for collaborations, and track engagement.",
+    responsibilities: [
+      "Manage Instagram & YouTube accounts and schedule daily Reels/Shorts",
+      "Craft catchy captions, trending hashtags, and engagement hooks",
+      "Find and reach out to relevant creators/influencers for page collaborations",
+      "Track video views, reach, engagement metrics, and analyze competitors"
+    ],
+    skills: ["Instagram & YouTube Marketing", "Canva Basics", "Good Communication", "Google Sheets"],
+    perks: ["Real Campaign Budget Handling", "Influencer Outreach Experience", "Certificate", "PPO Track"]
+  },
   {
     id: "web-dev-intern",
     title: "Web Development Intern",
@@ -42,15 +120,41 @@ export const internshipRoles: InternshipRole[] = [
     stipend: "Performance Stipend + PPO Opportunity",
     openings: 4,
     featured: true,
-    description: "Build responsive, modern web apps using React, TypeScript, Tailwind CSS, and Node.js for real client projects.",
+    status: "Open",
+    goodFor: "BCA / MCA / B.Tech CS & IT students",
+    description: "Fix frontend/backend bugs, enhance website UI, build approved features, test APIs, work with databases, and push code via GitHub.",
     responsibilities: [
-      "Develop responsive UI components using React and Tailwind CSS",
-      "Integrate RESTful APIs and handle dynamic state management",
-      "Optimize website performance, loading speed, and cross-browser responsiveness",
-      "Collaborate with backend engineers and UI/UX designers"
+      "Fix frontend and backend bugs across live web applications",
+      "Improve website UI, loading speeds, and responsive design",
+      "Develop new features, integrate REST APIs, and manage database operations",
+      "Use Git & GitHub for collaborative version control and deployment"
     ],
-    skills: ["HTML/CSS", "JavaScript", "React.js", "Tailwind CSS", "Git & GitHub"],
-    perks: ["Certificate of Completion", "Mentorship by Senior Leads", "PPO for top performers", "Live Client Projects"]
+    skills: ["HTML/CSS/JavaScript", "Python / Node.js Backend", "SQL Basics", "Git & GitHub"],
+    perks: ["Certificate of Completion", "Mentorship by Senior Leads", "PPO for top performers", "Live Project Commit History"]
+  },
+  {
+    id: "product-research-innovation-intern",
+    title: "Product Research & Innovation Intern",
+    category: "Data & Business",
+    icon: Lightbulb,
+    department: "Product & Strategy",
+    location: "Remote / Hybrid",
+    duration: "3 Months",
+    type: "Full-Time Internship",
+    stipend: "Performance Stipend",
+    openings: 3,
+    featured: true,
+    status: "Open",
+    goodFor: "Analytical & Creative minds (No coding required)",
+    description: "Use SikkaPlay, identify UX friction points, propose new game/reward concepts, research competing apps, and present weekly improvements.",
+    responsibilities: [
+      "Actively use SikkaPlay and document usability issues or friction points",
+      "Propose creative new features, mini-games, and user reward ideas",
+      "Research competing gaming & reward applications in the market",
+      "Analyze user experience flows and prepare structured weekly suggestions"
+    ],
+    skills: ["Observation Skills", "Creativity", "Analytical Thinking", "Basic Documentation"],
+    perks: ["Direct Impact on Product Roadmap", "Certificate of Merit", "Product Management Exposure", "PPO Track"]
   },
   {
     id: "prompt-engineer-intern",
@@ -61,40 +165,18 @@ export const internshipRoles: InternshipRole[] = [
     location: "Remote / Hybrid",
     duration: "3 Months",
     type: "Full-Time Internship",
-    stipend: "Performance Stipend + Bonuses",
-    openings: 3,
-    featured: true,
-    description: "Craft, evaluate, and fine-tune prompts for LLMs (OpenAI, Claude, Llama) to automate workflows and enhance AI applications.",
+    stipend: "Performance Stipend",
+    openings: 0,
+    featured: false,
+    status: "Closed",
+    goodFor: "AI Enthusiasts",
+    description: "Craft and evaluate prompts for LLMs. Applications for this cycle are currently closed.",
     responsibilities: [
-      "Design advanced system prompts and multi-shot instructions for AI agents",
-      "Evaluate LLM output accuracy, hallucination rates, and safety guidelines",
-      "Integrate LLMs with Python automation scripts and workflow tools",
-      "Document prompt engineering patterns and benchmark AI performance"
+      "Design advanced system prompts for AI agents",
+      "Evaluate LLM output accuracy and safety guidelines"
     ],
-    skills: ["LLM Prompting", "ChatGPT / Claude APIs", "Python Basics", "NLP Concepts", "Critical Thinking"],
-    perks: ["Hands-on AI Experience", "Certificate", "Flexible Hours", "Cutting-edge Tech Exposure"]
-  },
-  {
-    id: "app-dev-intern",
-    title: "App Development Intern",
-    category: "Development",
-    icon: Smartphone,
-    department: "Mobile Engineering",
-    location: "Lucknow (Hybrid)",
-    duration: "3 - 6 Months",
-    type: "Full-Time Internship",
-    stipend: "Performance Stipend + PPO",
-    openings: 3,
-    featured: true,
-    description: "Develop native and cross-platform mobile apps for Android and iOS using Flutter or React Native.",
-    responsibilities: [
-      "Implement mobile screens based on Figma UI/UX designs",
-      "Connect mobile apps with REST APIs and Firebase backend services",
-      "Debug performance bottlenecks and handle push notifications",
-      "Assist in publishing apps to Google Play Store & Apple App Store"
-    ],
-    skills: ["Flutter / Dart", "React Native", "REST APIs", "State Management", "Mobile UI"],
-    perks: ["App Deployment Experience", "Direct Mentorship", "Certificate", "PPO Track"]
+    skills: ["LLM Prompting", "ChatGPT APIs", "Python"],
+    perks: ["Certificate", "PPO Potential"]
   },
   {
     id: "graphic-ui-intern",
@@ -106,61 +188,37 @@ export const internshipRoles: InternshipRole[] = [
     duration: "3 Months",
     type: "Full-Time Internship",
     stipend: "Performance Stipend",
-    openings: 2,
+    openings: 0,
     featured: false,
-    description: "Design stunning UI components, social media creatives, brand assets, and marketing banners using Figma & Adobe Suite.",
+    status: "Closed",
+    goodFor: "Designers",
+    description: "Design UI graphics and marketing assets. Applications for this cycle are currently closed.",
     responsibilities: [
-      "Create high-fidelity wireframes, interactive prototypes, and UI kits",
-      "Design engaging graphics for social media campaigns and digital ads",
-      "Maintain brand consistency across website, pitch decks, and marketing collaterals",
-      "Incorporate user feedback and design modern, aesthetic interfaces"
+      "Create high-fidelity wireframes and social media graphics"
     ],
-    skills: ["Figma", "Photoshop", "Illustrator", "UI/UX Principles", "Color Theory"],
-    perks: ["Build strong Portfolio", "Certificate", "Creative Freedom", "PPO Potential"]
+    skills: ["Figma", "Photoshop", "UI/UX Principles"],
+    perks: ["Portfolio", "Certificate"]
   },
   {
     id: "data-analyst-intern",
     title: "Data Analyst Intern",
     category: "Data & Business",
     icon: BarChart2,
-    department: "Analytics & Insights",
+    department: "Analytics",
     location: "Remote / Hybrid",
-    duration: "3 - 6 Months",
-    type: "Full-Time Internship",
-    stipend: "Performance Stipend",
-    openings: 2,
-    featured: false,
-    description: "Extract, clean, analyze, and visualize data to generate actionable insights for business growth and optimization.",
-    responsibilities: [
-      "Query SQL databases and clean raw data using Python (Pandas/NumPy)",
-      "Build interactive dashboards in PowerBI / Tableau / Excel",
-      "Track marketing funnel metrics, website analytics, and sales trends",
-      "Present data-driven reports and recommendations to management"
-    ],
-    skills: ["SQL", "Python", "PowerBI / Tableau", "Excel", "Data Visualization"],
-    perks: ["Real Client Datasets", "Analytics Certification", "Mentorship", "PPO Track"]
-  },
-  {
-    id: "qa-testing-intern",
-    title: "Quality Assurance & Testing Intern",
-    category: "QA & AI",
-    icon: CheckSquare,
-    department: "Quality Engineering",
-    location: "Lucknow (Hybrid)",
     duration: "3 Months",
     type: "Full-Time Internship",
     stipend: "Performance Stipend",
-    openings: 3,
+    openings: 0,
     featured: false,
-    description: "Ensure software reliability and seamless user experience through rigorous manual testing, test case creation, and API testing.",
+    status: "Closed",
+    goodFor: "Data Enthusiasts",
+    description: "Extract, clean, and visualize business data. Applications for this cycle are currently closed.",
     responsibilities: [
-      "Write comprehensive test plans, test cases, and test scenarios",
-      "Perform manual functional, regression, usability, and cross-browser testing",
-      "Log, track, and verify software bugs using Jira/GitHub Issues",
-      "Execute basic API testing using Postman"
+      "Query SQL databases and build PowerBI dashboards"
     ],
-    skills: ["Manual Testing", "Test Case Writing", "Postman / API Testing", "Jira / Bug Tracking", "QA Methodologies"],
-    perks: ["Industry QA Exposure", "Certificate of Merit", "Hands-on Automation Training", "PPO Track"]
+    skills: ["SQL", "Python", "PowerBI", "Excel"],
+    perks: ["Certificate", "PPO Potential"]
   },
   {
     id: "business-analyst-intern",
@@ -168,78 +226,33 @@ export const internshipRoles: InternshipRole[] = [
     category: "Data & Business",
     icon: FileSpreadsheet,
     department: "Business Operations",
-    location: "Lucknow (On-site / Hybrid)",
-    duration: "3 - 6 Months",
-    type: "Full-Time Internship",
-    stipend: "Performance Stipend + Incentives",
-    openings: 2,
-    featured: false,
-    description: "Bridge the gap between business needs and technical teams by gathering requirements, creating wireframes, and mapping workflows.",
-    responsibilities: [
-      "Gather business requirements from stakeholders and document BRDs/PRDs",
-      "Map business processes, user flows, and system architecture diagrams",
-      "Conduct market research and competitor analysis for tech solutions",
-      "Assist in project management and sprint planning"
-    ],
-    skills: ["Requirement Gathering", "BRD/SRS Documentation", "Flowcharting / Visio", "Agile / Scrum", "Communication"],
-    perks: ["Client Interaction Exposure", "Certificate", "Management Mentorship", "PPO Track"]
-  },
-  {
-    id: "content-writer-intern",
-    title: "Content Writer & Copywriter Intern",
-    category: "Design & Content",
-    icon: PenTool,
-    department: "Marketing & Content",
-    location: "Remote / Hybrid",
+    location: "Lucknow (Hybrid)",
     duration: "3 Months",
     type: "Full-Time Internship",
     stipend: "Performance Stipend",
-    openings: 3,
+    openings: 0,
     featured: false,
-    description: "Craft compelling tech blogs, website copy, social media posts, and SEO-optimized content to engage audience.",
+    status: "Closed",
+    goodFor: "BBA / MBA / IT Students",
+    description: "Gather business requirements and map workflows. Applications for this cycle are currently closed.",
     responsibilities: [
-      "Write engaging SEO articles, tech blogs, and case study overviews",
-      "Develop catchy social media captions, email newsletters, and ad copy",
-      "Research trending tech topics and keyword opportunities",
-      "Proofread, edit, and maintain consistent brand voice across channels"
+      "Gather business requirements and document BRDs"
     ],
-    skills: ["Content Writing", "Copywriting", "SEO Basics", "Grammar & Proofreading", "Research"],
-    perks: ["Published Bylines", "Certificate", "Flexible Remote Work", "Performance Bonus"]
-  },
-  {
-    id: "digital-marketing-intern",
-    title: "Digital Marketing & SEO Intern",
-    category: "Design & Content",
-    icon: TrendingUp,
-    department: "Growth Marketing",
-    location: "Lucknow (Hybrid)",
-    duration: "3 - 6 Months",
-    type: "Full-Time Internship",
-    stipend: "Performance Stipend + Incentives",
-    openings: 4,
-    featured: true,
-    description: "Execute Google Ads, Meta ad campaigns, SEO optimization, and social media growth strategies for client accounts.",
-    responsibilities: [
-      "Manage social media calendars across Instagram, LinkedIn, and Facebook",
-      "Conduct keyword research, on-page SEO, and backlink outreach",
-      "Assist in setting up Meta Ads and Google Search campaign experiments",
-      "Analyze analytics metrics to refine campaign targeting and ROAS"
-    ],
-    skills: ["SEO Basics", "Social Media Management", "Google Analytics", "Canva Basics", "Campaign Strategy"],
-    perks: ["Ad Budget Handling", "Google & Meta Certifications Help", "Stipend", "PPO Opportunity"]
+    skills: ["Requirement Gathering", "BRD Documentation", "Agile"],
+    perks: ["Certificate", "PPO Potential"]
   }
 ];
 
 export const careerPerks = [
   {
     icon: "Rocket",
-    title: "Live Industry Projects",
-    description: "Work directly on client applications, SaaS platforms, and digital campaigns — no dummy tasks."
+    title: "Live SikkaPlay & Client Projects",
+    description: "Work directly on live app testing, real campaigns, and feature deployments — no dummy assignments."
   },
   {
     icon: "GraduationCap",
     title: "1-on-1 Senior Mentorship",
-    description: "Learn best practices, code reviews, and industry tools directly from senior engineers & leads."
+    description: "Learn best practices, bug tracking, and creative workflows directly from experienced leads."
   },
   {
     icon: "Award",
@@ -254,12 +267,12 @@ export const careerPerks = [
   {
     icon: "DollarSign",
     title: "Stipend & Performance Bonuses",
-    description: "Monthly performance-based stipends and bonuses for exceptional project delivery."
+    description: "Monthly performance-based stipends and bonuses for exceptional contribution and bug reporting."
   },
   {
     icon: "Users",
-    title: "Vibrant Work Culture",
-    description: "Work in a supportive, collaborative, and fast-paced environment where your ideas are valued."
+    title: "No Prior Experience Needed",
+    description: "We hire based on enthusiasm, observation skills, and willingness to learn. Guidance provided from day 1."
   }
 ];
 
@@ -267,44 +280,44 @@ export const hiringSteps = [
   {
     step: "01",
     title: "Apply Online",
-    description: "Select your preferred internship role and fill out our quick application form with your resume and portfolio."
+    description: "Select your preferred internship role and fill out our 1-minute application form."
   },
   {
     step: "02",
     title: "Profile Review",
-    description: "Our hiring team reviews your resume, portfolio, GitHub, or writing samples within 48 hours."
+    description: "Our hiring team reviews your details and Google Sheets/sample work within 24-48 hours."
   },
   {
     step: "03",
-    title: "Short Task / Interview",
-    description: "Participate in a friendly 20-minute technical or creative discussion and a short skill assignment."
+    title: "Quick Chat / Task",
+    description: "Participate in a friendly 15-minute discussion and a short 1-day evaluation task."
   },
   {
     step: "04",
     title: "Offer & Onboarding",
-    description: "Receive your formal Internship Offer Letter and start your journey with Sudarshan Technologies!"
+    description: "Receive your Internship Offer Letter and start testing/building with Sudarshan Technologies!"
   }
 ];
 
 export const internFaqs = [
   {
-    question: "Who can apply for these internship programs?",
-    answer: "Students currently pursuing BCA, B.Tech, MCA, M.Tech, BBA, MBA, Graphic Design, or any related field, as well as recent graduates looking to gain practical experience, are eligible to apply."
+    question: "Do I need prior work experience to apply?",
+    answer: "No! Roles like App Testing & QA, AI Content & Reels, Social Media Marketing, and Product Research require NO prior experience. We welcome BCA, MCA, B.Tech, BBA, and all passionate students."
+  },
+  {
+    question: "What is the primary project we will be working on?",
+    answer: "Interns will work directly on testing, marketing, content, and feature research for SikkaPlay app & games as well as client web systems."
   },
   {
     question: "Is there a stipend provided during the internship?",
-    answer: "Yes, all our internships include performance-based stipends and milestone bonuses based on project contribution and dedication."
+    answer: "Yes, all active internships include performance-based stipends and milestone bonuses based on bug reports, content reach, and project delivery."
   },
   {
     question: "Are remote internships available?",
-    answer: "Selected roles like Prompt Engineering, Data Analysis, and Content Writing offer remote options. Roles like Web Development, App Development, and QA are hybrid/on-site at our Lucknow center in Hazratganj/Chinhat."
-  },
-  {
-    question: "What is the duration of the internship?",
-    answer: "Most internships run for 3 months to 6 months depending on the domain and student university requirements."
+    answer: "Yes! AI Content & Reels, Social Media Marketing, and Product Research offer Remote options. App Testing & Web Development are Hybrid/Remote."
   },
   {
     question: "Will I get a Pre-Placement Offer (PPO)?",
-    answer: "Yes! High-performing interns who demonstrate technical capability, leadership, and consistency are routinely offered full-time job roles at Sudarshan Technologies."
+    answer: "Yes! High-performing interns who show dedication, consistency, and good observation skills are routinely offered full-time job roles at Sudarshan Technologies."
   }
 ];
