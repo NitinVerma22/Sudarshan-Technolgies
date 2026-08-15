@@ -172,9 +172,12 @@ ${applicationForm.coverLetter || "No note provided."}
         coverLetter: "",
       });
       setActiveModalRole(null);
-    } catch (error) {
-      console.error(error);
-      toast.error("Failed to submit application. Please try again or apply directly via WhatsApp/Email.");
+    } catch (error: any) {
+      console.error("EmailJS Error:", error);
+      const errorMsg = error?.text || error?.message || "Unknown error";
+      toast.error("Failed to submit application", {
+        description: `Error details: ${errorMsg}. Please try again or apply directly via WhatsApp/Email.`
+      });
     } finally {
       setIsSubmitting(false);
     }
