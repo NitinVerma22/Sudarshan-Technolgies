@@ -34,6 +34,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
+import emailjs from "@emailjs/browser";
 
 const perkIcons: Record<string, any> = {
   Rocket,
@@ -128,26 +129,55 @@ const Careers = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate Network Request
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    const emailData = {
+      name: applicationForm.fullName,
+      email: applicationForm.email,
+      company: `Degree: ${applicationForm.degree} (Grad: ${applicationForm.gradYear})`,
+      service: `Career: ${applicationForm.roleTitle}`,
+      message: `
+Candidate Name: ${applicationForm.fullName}
+Email: ${applicationForm.email}
+Phone: ${applicationForm.phone}
+Target Role: ${applicationForm.roleTitle}
+Degree/Branch: ${applicationForm.degree}
+Graduation Year: ${applicationForm.gradYear}
+Resume/Portfolio/GitHub: ${applicationForm.portfolioUrl}
 
-    toast.success("Application Submitted Successfully!", {
-      description: `Thank you ${applicationForm.fullName}. Our recruitment team will review your application for ${applicationForm.roleTitle} and get back to you within 48 hours.`
-    });
+Cover Letter / Candidate Message:
+${applicationForm.coverLetter || "No note provided."}
+      `.trim()
+    };
 
-    setIsSubmitting(false);
-    setActiveModalRole(null);
-    setApplicationForm({
-      fullName: "",
-      email: "",
-      phone: "",
-      roleId: "",
-      roleTitle: "",
-      degree: "",
-      gradYear: "",
-      portfolioUrl: "",
-      coverLetter: "",
-    });
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_id",
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_id",
+        emailData,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "public_key"
+      );
+
+      toast.success("Application Submitted Successfully!", {
+        description: `Thank you ${applicationForm.fullName}. Our recruitment team will review your application for ${applicationForm.roleTitle} and get back to you within 48 hours.`
+      });
+
+      setApplicationForm({
+        fullName: "",
+        email: "",
+        phone: "",
+        roleId: "",
+        roleTitle: "",
+        degree: "",
+        gradYear: "",
+        portfolioUrl: "",
+        coverLetter: "",
+      });
+      setActiveModalRole(null);
+    } catch (error) {
+      console.error(error);
+      toast.error("Failed to submit application. Please try again or apply directly via WhatsApp/Email.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
