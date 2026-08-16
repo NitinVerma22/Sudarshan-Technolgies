@@ -58,7 +58,7 @@ const Contact = () => {
                     { icon: MessageCircle, label: "+91 73767 42022 (WhatsApp)", href: "https://wa.me/917376742022" },
                     { icon: Phone, label: "+91 93053 70277", href: "tel:+919305370277" },
                     { icon: Phone, label: "+91 73767 42022", href: "tel:+917376742022" },
-                    { icon: Mail, label: "hello@sudarshantech.com", href: "mailto:hello@sudarshantech.com" },
+                    { icon: Mail, label: "connect@sudarshantechnologies.com", href: "mailto:connect@sudarshantechnologies.com" },
                     { icon: MapPin, label: "Tej Kumar Plaza, Hazratganj, Lucknow", href: "https://maps.app.goo.gl/MEzbKv3nMMHUV8w57" },
                     { icon: Clock, label: "Mon - Sat: 9:00 AM - 6:00 PM", href: null },
                   ].map((item) => (

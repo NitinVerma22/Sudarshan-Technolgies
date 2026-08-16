@@ -48,8 +48,8 @@ const Footer = () => (
             <a href="tel:+917376742022" className="flex items-center gap-2 text-white/60 text-sm hover:text-secondary transition-colors">
               <Phone className="w-3.5 h-3.5" /> +91 73767 42022
             </a>
-            <a href="mailto:hello@sudarshantech.com" className="flex items-center gap-2 text-white/60 text-sm hover:text-secondary transition-colors">
-              <Mail className="w-3.5 h-3.5" /> hello@sudarshantech.com
+            <a href="mailto:connect@sudarshantechnologies.com" className="flex items-center gap-2 text-white/60 text-sm hover:text-secondary transition-colors">
+              <Mail className="w-3.5 h-3.5" /> connect@sudarshantechnologies.com
             </a>
             <a href="https://maps.app.goo.gl/MEzbKv3nMMHUV8w57" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white/60 text-sm hover:text-secondary transition-colors">
               <MapPin className="w-3.5 h-3.5 flex-shrink-0" /> Tej Kumar Plaza, Hazratganj, Lucknow
